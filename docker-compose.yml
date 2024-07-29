@@ -1,0 +1,10 @@
+
+services:
+  postgres:
+    image: postgres:15.1
+    environment:
+      POSTGRES_DB: "auction"
+      POSTGRES_USER: "postgres"
+      POSTGRES_PASSWORD: ${PG_PASSWORD}
+    ports:
+      - "5432:5432"
