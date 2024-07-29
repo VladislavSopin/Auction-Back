@@ -1,10 +1,19 @@
-
 services:
   postgres:
     image: postgres:15.1
     environment:
-      POSTGRES_DB: "auction"
-      POSTGRES_USER: "postgres"
+      POSTGRES_DB: ${PG_DB}
+      POSTGRES_USER: ${PG_USER}
       POSTGRES_PASSWORD: ${PG_PASSWORD}
     ports:
-      - "5432:5432"
+      - ${PG_PORT}:5432
+
+  pgadmin:
+    container_name: pgadmin_container
+    image: dpage/pgadmin4:8.9
+    environment:
+      PGADMIN_DEFAULT_EMAIL: 'hunter-134@mail.ru'
+      PGADMIN_DEFAULT_PASSWORD: '123'
+    restart: unless-stopped
+    ports:
+      - '5050:80'
