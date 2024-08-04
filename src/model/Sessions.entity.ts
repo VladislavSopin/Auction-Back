@@ -6,8 +6,11 @@ export class Sessions {
   id: number
 
   @Column()
-  accessToken: string
+  login: string
 
   @Column()
   refreshToken: string
+
+  @Column()
+  dateEnd: Date
 }
