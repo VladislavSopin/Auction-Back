@@ -5,7 +5,7 @@ import {
   ManyToOne,
   OneToMany,
 } from 'typeorm'
-import { User } from './User.entity'
+import { User } from '../user/entities/user.entity'
 import { History } from './History.entity'
 import { LotChanges } from './LotChanges.entity'
 

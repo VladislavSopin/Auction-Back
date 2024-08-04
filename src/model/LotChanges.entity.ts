@@ -1,6 +1,6 @@
 import { Entity, PrimaryGeneratedColumn, Column, ManyToOne } from 'typeorm'
 import { Lot } from './Lot.entity'
-import { User } from './User.entity'
+import { User } from '../user/entities/user.entity'
 
 @Entity()
 export class LotChanges {

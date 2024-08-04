@@ -4,6 +4,7 @@ import { AppService } from './app.service'
 import { getTypeOrmConfig } from './DataSource'
 import { TypeOrmModule } from '@nestjs/typeorm'
 import { ConfigModule, ConfigService } from '@nestjs/config'
+import { UserModule } from './user/user.module';
 
 @Module({
   imports: [
@@ -16,6 +17,7 @@ import { ConfigModule, ConfigService } from '@nestjs/config'
       envFilePath: '.env',
       isGlobal: true,
     }),
+    UserModule,
   ],
   controllers: [AppController],
   providers: [AppService],

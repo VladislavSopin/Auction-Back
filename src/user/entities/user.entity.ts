@@ -5,10 +5,10 @@ import {
   OneToMany,
   OneToOne,
 } from 'typeorm'
-import { Lot } from './Lot.entity'
-import { History } from './History.entity'
-import { LotChanges } from './LotChanges.entity'
-import { UserConfirms } from './UserConfirms.entity'
+import { Lot } from '../../model/Lot.entity'
+import { History } from '../../model/History.entity'
+import { LotChanges } from '../../model/LotChanges.entity'
+import { UserConfirms } from '../../model/UserConfirms.entity'
 
 @Entity()
 export class User {
@@ -56,4 +56,8 @@ export class User {
 
   @OneToMany(() => UserConfirms, (confirm) => confirm.user)
   confirm: UserConfirms[]
+
+  constructor() {
+    this.isVerifiet = false
+  }
 }
